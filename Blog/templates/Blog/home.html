@@ -1,0 +1,14 @@
+
+<div style="font-family: 'Arial">
+    <h2>My Blog posts are ...</h2>
+</div>
+
+<div>
+    I will add Blog posts here.
+    {% for blog in blogs %}
+        <h2>{{blog.title}} </h2>
+        <h4>{{blog.date}}</h4>
+        <h3>{{blog.description}}</h3>
+    {% endfor %}
+</div>
+   
