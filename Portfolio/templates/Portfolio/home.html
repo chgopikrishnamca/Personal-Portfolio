@@ -1,7 +1,12 @@
 <h2>Personal Portfolio</h2>
 
+<h2><a href="{% url 'blog_app:blog_home' %}">Click on me to get Blogs</a></h2>
+
 Importing images or static files:
 {% load static %}
+<br>
+<a href="">Resume</a>
+
 <img src="{% static 'Portfolio/beach.png' %}"
 
 {% for project in projects %}
