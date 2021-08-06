@@ -6,9 +6,8 @@
 <div>
     I will add Blog posts here.
     {% for blog in blogs %}
-        <h2>{{blog.title}} </h2>
+       <a href="{% url 'blog_app:blog_details' blog.pk %}"><h2>{{blog.title}} </h2></a> 
         <h4>{{blog.date}}</h4>
         <h3>{{blog.description}}</h3>
     {% endfor %}
 </div>
-   
