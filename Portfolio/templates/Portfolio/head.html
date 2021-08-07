@@ -1,0 +1,49 @@
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+{% load static %}
+<style>
+    #title{
+        color: rgb(185, 214, 221);
+        font-weight: bolder;
+        font-family: "Agency FB";
+    }
+    .banner{
+        background-image: url("{% static 'Portfolio/banner.jpg' %}");
+    }
+    .column {
+        float: right;
+        padding: 30px;
+        padding-inline: 40px;
+    }
+    .banner::after {
+        content: "";
+        clear: both;
+        display: table;
+    }
+    
+</style>
+<div class="banner">
+        
+        <div class="column">
+            <a href="https://www.facebook.com/chgopikrishna1438"><img src="{% static 'Portfolio/logo-fb.png' %}" class="right" height="45" width="45" /></a>
+        </div>
+        <div class="column">
+            <a href="https://www.linkedin.com/in/cherukuri-gopikrishna-497339153/"><img src="{% static 'Portfolio/logo-linkedin.png' %}" class="right" height="45" width="45" /></a>
+        </div>
+        <div class="column">
+            <a href="https://twitter.com/gopikrishnamca"><img src="{% static 'Portfolio/logo-twitter.png' %}" class="right" height="50" width="50" /></a>
+        </div>
+
+        <div class="column" id="title">
+            <h1>Welcome to My Blog - Gopikrishna Cherukuri</h1>
+        </div>
+        <div class="column" >
+            <a href="{% url 'Portfolio/home.html' %}"><img src="{% static 'Portfolio/logo.png' %}" height="50" width="50" /></a>
+        </div>
+        
+ </div>
+
+ 
+
+

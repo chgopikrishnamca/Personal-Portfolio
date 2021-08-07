@@ -1,13 +1,41 @@
+{% load static %}
+<style>
+a{
+    text-decoration:none;
+}
+.container{
+    padding:50px;
+    background-image: url("{% static 'Portfolio/background5.jpg' %}");
+    color: whitesmoke
+}
+.box{
+    border-style:outset;
+    font-family: "Calibri";
+    color: mintcream;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    background-color: lightskyblue;
+    background-image: url("{% static 'Portfolio/banner5.jpg' %}");
 
-<div style="font-family: 'Arial">
-    <h2>My Blog contains {{blogs.count}} post{{blogs.count|pluralize}}</h2>
-</div>
+}
+</style>
 
-<div>
-    I will add Blog posts here.
-    {% for blog in blogs %}
-       <a href="{% url 'blog_app:blog_details' blog.pk %}"><h2>{{blog.title}} </h2></a> 
-        <h4>{{blog.date}}</h4>
-        <h3>{{blog.description|truncatechars:100}}</h3>
-    {% endfor %}
+<div class="container">
+    <div style="height: 100px;padding:10px; font-family:Verdana; font-weight: bold;text-align: center;background-image:url('{% static 'Portfolio/banner.jpg' %}');">
+        <h1>My Blogs</h1>
+    </div>
+    <div style="font-family: 'Arial">
+        <h2>My Blog contains {{blogs.count}} post{{blogs.count|pluralize}}</h2>
+    </div>
+    
+    <div class="row">
+        {% for blog in blogs %}
+        <div class="box">
+           <a href="{% url 'blog_app:blog_details' blog.pk %}"><h2 style="color:Gray;font-family: 'Arial'">{{blog.title}} </h2></a> 
+            <h4>{{blog.date}}</h4>
+            <h3>{{blog.description|truncatechars:100}}</h3>
+        </div>
+        {% endfor %}
+    </div>
 </div>
