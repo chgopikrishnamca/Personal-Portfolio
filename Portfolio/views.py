@@ -4,5 +4,5 @@ from .models import Project
 
 def home(request):
     projects = Project.objects.all()
-    return render(request, "PortFolio/home.html", {'projects': projects})
+    return render(request, "Portfolio/home.html", {'projects': projects})
 
