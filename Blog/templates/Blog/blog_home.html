@@ -1,41 +1,54 @@
+{% include 'Portfolio/head.html' %}
 {% load static %}
-<style>
-a{
-    text-decoration:none;
-}
-.container{
-    padding:50px;
-    background-image: url("{% static 'Portfolio/background5.jpg' %}");
-    color: whitesmoke
-}
-.box{
-    border-style:outset;
-    font-family: "Calibri";
-    color: mintcream;
-    padding: 10px;
-    margin: 10px;
-    border-radius: 5px;
-    background-color: lightskyblue;
-    background-image: url("{% static 'Portfolio/banner5.jpg' %}");
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
-}
+<style>
+    *{
+        font-family: 'Agency FB';
+    }
+    a:hover{
+        text-decoration:none;
+    }
+
+    .container{
+      
+        color:lightskyblue;
+    }
+    #box{
+        border-style:inset;
+        color: mintcream;
+        width: inherit;
+        padding: 10px;
+        margin: 10px;
+        padding-right: 50px;
+        border-radius: 5px;
+        border-color: lightskyblue;
+        background-color: bluegreen;
+    }
+    .blog_col{
+        float:left;
+    }
 </style>
 
-<div class="container">
-    <div style="height: 100px;padding:10px; font-family:Verdana; font-weight: bold;text-align: center;background-image:url('{% static 'Portfolio/banner.jpg' %}');">
-        <h1>My Blogs</h1>
-    </div>
-    <div style="font-family: 'Arial">
-        <h2>My Blog contains {{blogs.count}} post{{blogs.count|pluralize}}</h2>
-    </div>
-    
-    <div class="row">
-        {% for blog in blogs %}
-        <div class="box">
-           <a href="{% url 'blog_app:blog_details' blog.pk %}"><h2 style="color:Gray;font-family: 'Arial'">{{blog.title}} </h2></a> 
-            <h4>{{blog.date}}</h4>
-            <h3>{{blog.description|truncatechars:100}}</h3>
+<body style="background-color: rgb(27, 62, 107);">
+    <div class="container">
+        <div style="padding-top: 20px;">
+            <h2>My Blog contains {{blogs.count}} post{{blogs.count|pluralize}}</h2>
         </div>
-        {% endfor %}
-    </div>
-</div>
+        
+        <div class="row">
+            {% for blog in blogs %}
+            <div  class="btn btn-outline-light" id="box">
+                <div class="blog_col">
+                    <a href="{% url 'blog_app:blog_details' blog.pk %}"><img src="{% static 'Portfolio/default-blog-icon.png' %}" height="100px" width="100px"></a>
+                </div>
+                <div class="blog_col">
+                    <a href="{% url 'blog_app:blog_details' blog.pk %}"><h2 style="color:Gray; display:inline">{{blog.title}} </h2></a> 
+                    <span style="color: black"> {{blog.date}}</span>
+                    <h3 style="color:Gray">{{blog.description|truncatechars:100}}</h3>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>    
+</body>

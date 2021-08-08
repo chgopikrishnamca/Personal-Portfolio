@@ -28,12 +28,12 @@
         height: auto;
         float: right;
         padding: 5px;
-        margin-top: 25px;
+        margin-top: 20px;
         margin-right: 25px;
     }
 
     .card:hover {
-        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+        box-shadow: 0 8px 16px 0 rgba(158, 152, 152, 0.2);
     }
     
 
@@ -44,7 +44,7 @@
 
     .description{
         font-family: 'Comic Sans MS';
-        background-color: lightgrey;
+        background-color: rgb(68, 88, 116);
         height: auto;
         padding-top: 40px;
         padding-bottom: 20px;
@@ -68,10 +68,10 @@
             <h1>Welcome to My Blog - Gopikrishna Cherukuri</h1>
         </div>
         <div class="column" >
-            <a href=""><img src="{% static 'Portfolio/logo.png' %}" height="50" width="50" /></a>
+            <a href="/"><img src="{% static 'Portfolio/logo.png' %}" height="50" width="50" /></a>
         </div>
         <div class="column" >
-            <a href="{% url 'blog_app:blog_home' %}"> <img src="{% static 'Portfolio/blog.jpg' %}"  height="50px" width="70px"></a>
+            <a href="{% url 'blog_app:blog_home' %}"> <img src="{% static 'Portfolio/blog.png' %}"  height="50px" width="70px"></a>
         </div>
         
         
@@ -97,8 +97,6 @@
             It is here. Click on <a href="https://jntuvhostels.eu-gb.mybluemix.net/" target="_blank"> < me ></me> </a></p></br>
 
             <p>This is my first Django project and I've added related information from the database about few programming or scripting languages. I feel very happy to share this with you all.</p></br>
-
-            Thank You!
             
         </h3>
     </div>

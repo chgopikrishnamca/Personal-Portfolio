@@ -3,6 +3,10 @@
 
 {% load static %}
 <style>
+    *{
+        padding: 5px;
+        margin: auto;
+    }
     #title{
         color: rgb(185, 214, 221);
         font-weight: bolder;
@@ -21,29 +25,26 @@
         clear: both;
         display: table;
     }
-    
+   
 </style>
-<div class="banner">
-        
-        <div class="column">
-            <a href="https://www.facebook.com/chgopikrishna1438"><img src="{% static 'Portfolio/logo-fb.png' %}" class="right" height="45" width="45" /></a>
-        </div>
-        <div class="column">
-            <a href="https://www.linkedin.com/in/cherukuri-gopikrishna-497339153/"><img src="{% static 'Portfolio/logo-linkedin.png' %}" class="right" height="45" width="45" /></a>
-        </div>
-        <div class="column">
-            <a href="https://twitter.com/gopikrishnamca"><img src="{% static 'Portfolio/logo-twitter.png' %}" class="right" height="50" width="50" /></a>
-        </div>
+<div class="banner"> 
+    <div class="column">
+        <a href="https://www.facebook.com/chgopikrishna1438" target="_blank"><img src="{% static 'Portfolio/logo-fb.png' %}" class="right" height="45" width="45" /></a>
+    </div>
+    <div class="column">
+        <a href="https://www.linkedin.com/in/cherukuri-gopikrishna-497339153/" target="_blank"><img src="{% static 'Portfolio/logo-linkedin.png' %}" class="right" height="45" width="45" /></a>
+    </div>
+    <div class="column">
+        <a href="https://twitter.com/gopikrishnamca" target="_blank"><img src="{% static 'Portfolio/logo-twitter.png' %}" class="right" height="50" width="50" /></a>
+    </div>
 
-        <div class="column" id="title">
-            <h1>Welcome to My Blog - Gopikrishna Cherukuri</h1>
-        </div>
-        <div class="column" >
-            <a href="{% url 'Portfolio/home.html' %}"><img src="{% static 'Portfolio/logo.png' %}" height="50" width="50" /></a>
-        </div>
-        
+    <div class="column" id="title">
+        <h1>Welcome to My Blog - Gopikrishna Cherukuri</h1>
+    </div>
+    <div class="column" >
+        <a href="/"><img src="{% static 'Portfolio/logo.png' %}" height="50" width="50" /></a>
+    </div>
+    <div class="column" >
+        <a href="{% url 'blog_app:blog_home' %}"> <img src="{% static 'Portfolio/blog.png' %}"  height="50px" width="70px"></a>
+    </div>
  </div>
-
- 
-
-
